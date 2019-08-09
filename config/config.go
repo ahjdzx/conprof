@@ -138,6 +138,8 @@ type ScrapeConfig struct {
 	ScrapeTimeout model.Duration `yaml:"scrape_timeout,omitempty"`
 	// The URL scheme with which to fetch metrics from targets.
 	Scheme string `yaml:"scheme,omitempty"`
+	// Binary path
+	BinPath string `yaml:"bin_path,omitempty"`
 
 	ProfilingConfig *ProfilingConfig `yaml:"profiling_config,omitempty"`
 

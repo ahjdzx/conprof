@@ -1,6 +1,12 @@
 scrape_configs:
-- job_name: 'conprof'
+- job_name: 'MaxQ'
   scrape_interval: 1m
   scrape_timeout: 1m
+  bin_path: "~/mygo/src/gitlab.alibaba-inc.com/MaxQ/q/q"
+  profiling_config:
+    pprof_config:
+      profile:
+        enabled: true
+        path: "/debug/profiles/cpu"
   static_configs:
-  - targets: ['localhost:8080']
+  - targets: ['localhost:15771']

@@ -73,6 +73,7 @@ func (p *pprofUI) PprofView(w http.ResponseWriter, r *http.Request, ps httproute
 		return
 	}
 	seriesLabelsString := string(decodedSeriesName)
+	level.Warn(p.logger).Log("decodedSeriesName: ", seriesLabelsString)
 	seriesLabels, err := promql.ParseMetricSelector(seriesLabelsString)
 	if err != nil {
 		msg := fmt.Sprintf("failed to parse series labels %v with error %v", seriesLabelsString, err)
